@@ -1,4 +1,6 @@
 NI2014-AppAndroid
 =================
 
-DepÃ´t pour l'application android
+Depôt pour l'application mobile android
+
+
