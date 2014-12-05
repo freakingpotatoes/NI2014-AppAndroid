@@ -18,7 +18,7 @@ function retourRequete() {
    if (xhr.readyState == xhr.DONE) { // Données disponibles
       var a = document.getElementById("success");
 
-      a.innerHTML = JSON.parse(xhr.responseText);
+      a.innerHTML = xhr.responseText;
    }
 }
 
