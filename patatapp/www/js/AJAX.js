@@ -14,6 +14,7 @@ var xhr = getXHR();
 
 // Mise à jour de la liste dès que les données sont disponibles
 function retourRequete() {
+	alert("State: "+xhr.DONE);
    if (xhr.readyState == xhr.DONE) { // Données disponibles
       var a = document.getElementById("success");
 
@@ -34,6 +35,7 @@ function envoyerFormulaire() {
     // Avec POST
     xhr.open("POST", "http://85.14.137.6/projets/NI2014-AppMobile/serveur.php", true);
     var param = 'test=' + champ.value;
+	alert("Param: "+param);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send(param);
 }
