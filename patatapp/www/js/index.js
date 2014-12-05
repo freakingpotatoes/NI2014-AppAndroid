@@ -32,7 +32,7 @@ function success(position) {
   longitude.id = 'longitude';
   longitude.type = 'hidden'
   longitude.value = position.coords.longitude;
-
+  alert(position.coords.longitude + ' ' + position.coords.latitude);
   document.querySelector('article').appendChild(mapcanvas);
   document.querySelector('form').appendChild(latitude);
   document.querySelector('form').appendChild(longitude);
