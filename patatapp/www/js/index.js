@@ -16,6 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
 */
+alert('Ok');
+
 function success(position) {
   alert(position.coords.latitude + "\n" + position.coords.longitude);
 }
@@ -24,9 +26,11 @@ function error(error) {
   alert(error.code + " " + error.message);
 }
 
-document.addEventListener('deviceready', onDeviceReady, false);
+function onLoad() {
+	document.addEventListener('deviceready', onDeviceReady, false);
+}
 function onDeviceReady() {
-	alert('Ok');
+	alert('Ready');
 
 	if (navigator.geolocation) {
 	  alert('test');
