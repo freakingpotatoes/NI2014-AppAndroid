@@ -1,5 +1,5 @@
 <?php
 	if(isset($_POST['test']) {
-		echo "blargh";
+		echo json_encode($_POST['test']);
 	}
 ?>

@@ -17,7 +17,7 @@ function retourRequete() {
    if (xhr.readyState == xhr.DONE) { // Données disponibles
       var a = document.getElementById("success");
 
-      a.setAttribute.innerHTML = xhr.responseText;
+      a.setAttribute.innerHTML = JSON.parse(xhr.responseText);
 	  
       if (a.hasAttribute("style"))
          a.removeAttribute("style");
