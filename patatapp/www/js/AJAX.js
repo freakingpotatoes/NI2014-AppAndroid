@@ -19,9 +19,6 @@ function retourRequete() {
       var a = document.getElementById("success");
 
       a.setAttribute.innerHTML = JSON.parse(xhr.responseText);
-	  
-      if (a.hasAttribute("style"))
-         a.removeAttribute("style");
    }
 }
 
