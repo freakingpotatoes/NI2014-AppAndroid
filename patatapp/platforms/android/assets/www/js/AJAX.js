@@ -14,13 +14,11 @@ var xhr = getXHR();
 
 // Mise à jour de la liste dès que les données sont disponibles
 function retourRequete() {
+	alert("State: "+xhr.readyState);
    if (xhr.readyState == xhr.DONE) { // Données disponibles
       var a = document.getElementById("success");
-
-      a.setAttribute.innerHTML = JSON.parse(xhr.responseText);
-	  
-      if (a.hasAttribute("style"))
-         a.removeAttribute("style");
+		alert("Reponse: "+xhr.responseText);
+      a.innerHTML = xhr.responseText;
    }
 }
 
@@ -32,8 +30,9 @@ function envoyerFormulaire() {
     // Ouverture d'une connexion en mode asynchrone
     xhr.onreadystatechange = retourRequete;
     // Avec POST
-    xhr.open("POST", "http://85.14.137.6/projets/NI2014-AppMobile/serveur.php", true);
+    xhr.open("POST", "http://85.14.137.6/projets/NI2014-AppAndroid/serveur.php", true);
     var param = 'test=' + champ.value;
+	alert("Param: "+param);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send(param);
 }

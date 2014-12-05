@@ -35,6 +35,7 @@ C:\Users\Florian\git\NI2014-AppAndroid\patatapp\platforms\android\assets\www\css
 C:\Users\Florian\git\NI2014-AppAndroid\patatapp\platforms\android\assets\www\img \
 C:\Users\Florian\git\NI2014-AppAndroid\patatapp\platforms\android\assets\www\index.html \
 C:\Users\Florian\git\NI2014-AppAndroid\patatapp\platforms\android\assets\www\js \
+C:\Users\Florian\git\NI2014-AppAndroid\patatapp\platforms\android\assets\www\plugins \
 C:\Users\Florian\git\NI2014-AppAndroid\patatapp\platforms\android\assets\www\css\index.css \
 C:\Users\Florian\git\NI2014-AppAndroid\patatapp\platforms\android\assets\www\img\logo.png \
 C:\Users\Florian\git\NI2014-AppAndroid\patatapp\platforms\android\assets\www\js\AJAX.js \

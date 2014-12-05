@@ -10,4 +10,5 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <access origin="http://85.14.137.6/" />
 </widget>

@@ -15,38 +15,60 @@
  * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
+*/
+alert('Ok');
 
-var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
+function success(position) {
+  var mapcanvas = document.createElement('div');
+  mapcanvas.id = 'mapcontainer';
+  mapcanvas.style.height = '400px';
+  mapcanvas.style.width = '600px';
+
+  document.querySelector('article').appendChild(mapcanvas);
+
+  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  
+  var options = {
+    zoom: 15,
+    center: coords,
+    mapTypeControl: false,
+    navigationControlOptions: {
+    	style: google.maps.NavigationControlStyle.SMALL
     },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+  var marker = new google.maps.Marker({
+      position: coords,
+      map: map,
+      title:"Vous êtes ici"
+  });
+}
 
-        console.log('Received Event: ' + id);
-    }
-};
+function error(error) {
+  alert(error.code + " " + error.message);
+}
 
-app.initialize();
- */
+function onLoad() {
+	document.addEventListener('deviceready', onDeviceReady, false);
+}
+
+function onDeviceReady() {
+	alert('Ready');
+	
+	var options = {
+		enableHighAccuracy: true,
+		timeout: 10000,
+		maximumAge: 0
+	};
+	
+	if (navigator.geolocation) {
+	  alert('test');
+	  navigator.geolocation.getCurrentPosition(success, error, options);
+	} 
+	else {
+	  alert('Vous ne pouvez pas être géolocalisé');
+	}
+}
+ 
