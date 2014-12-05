@@ -14,7 +14,7 @@ var xhr = getXHR();
 
 // Mise à jour de la liste dès que les données sont disponibles
 function retourRequete() {
-	alert("State: "+xhr.DONE);
+	alert("State: "+xhr.readyState);
    if (xhr.readyState == xhr.DONE) { // Données disponibles
       var a = document.getElementById("success");
 
