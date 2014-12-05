@@ -3,10 +3,10 @@
     <preference name="loglevel" value="DEBUG" />
     <name>PatatApp</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Application pour l'�dition de la Nuit de l'Info, elle tente de r�pondre au d�fi Application Mobile.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="loic.bouix@iut-valence.fr" href="http://85.14.137.6/projets/NI2014-AppAndroid">
+        Freaking Potatoes
     </author>
     <content src="index.html" />
     <access origin="*" />
