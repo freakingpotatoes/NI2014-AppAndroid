@@ -71,5 +71,11 @@ function onDeviceReady() {
 		timeout: 10000,
 		maximumAge: 0
 	};
+	
+	if (navigator.geolocation) {
+	  navigator.geolocation.getCurrentPosition(success, error, options);
+	} else {
+	  alert('Vous ne pouvez pas être géolocalisé');
+	}
 }
  

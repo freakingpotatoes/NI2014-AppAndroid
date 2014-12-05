@@ -15,18 +15,16 @@ var xhr = getXHR();
 // Mise à jour de la liste dès que les données sont disponibles
 function retourRequete() {
    if (xhr.readyState == xhr.DONE) { // Données disponibles
-      var a = document.getElementById("success");
 	  if(xhr.responseText == 'ok') {
 		alert('ok!');
 	  }
 	  else {
 	    alert(xhr.responseText);
 	  }
-      a.innerHTML = xhr.responseText;
    }
 }
 
-function envoyerFormulaire(param) {
+function envoyerFormulaire() {
    var longitude = document.getElementById("longitude");
    var latitude = document.getElementById("latitude");
 
