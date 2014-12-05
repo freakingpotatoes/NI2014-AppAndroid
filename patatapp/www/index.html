@@ -30,22 +30,6 @@
     <body>
         <div class="app">
             <h1>PatatApp</h1>
-			<script>
-				alert('Ok');
-				function success(position) {
-				  alert(position.coords.latitude + "\n" + position.coords.longitude);
-				}
-				
-				function error(error) {
-				  alert(error.code + " " + error.message);
-				}
-
-				if (navigator.geolocation) {
-				  navigator.geolocation.getCurrentPosition(success, error);
-				} else {
-				  alert('Vous ne pouvez pas être géolocalisé');
-				}
-			</script>
         </div>
         <script type="text/javascript" src="js/AJAX.js"></script>
         <script type="text/javascript" src="js/index.js"></script>

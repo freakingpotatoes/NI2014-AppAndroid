@@ -15,6 +15,14 @@
  * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
+*/
+function success(position) {
+  alert(position.coords.latitude + "\n" + position.coords.longitude);
+}
+
+function error(error) {
+  alert(error.code + " " + error.message);
+}
 
 var app = {
     // Application Constructor
@@ -37,16 +45,16 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+		alert('Ok');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+		if (navigator.geolocation) {
+			alert('test');
+		  navigator.geolocation.getCurrentPosition(success, error);
+		} else {
+		  alert('Vous ne pouvez pas être géolocalisé');
+		}
     }
 };
 
 app.initialize();
- */
+ 
