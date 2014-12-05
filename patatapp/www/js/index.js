@@ -42,7 +42,7 @@ function success(position) {
   var marker = new google.maps.Marker({
       position: coords,
       map: map,
-      title:"Vous etes là"
+      title:"Vous êtes ici"
   });
 }
 
