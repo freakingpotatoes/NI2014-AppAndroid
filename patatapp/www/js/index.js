@@ -24,12 +24,12 @@ function success(position) {
   mapcanvas.style.width = '600px';
   
   var latitude = document.createElement('input');
-  latitude.id = 'mapcontainer';
+  latitude.id = 'latitude';
   latitude.type = 'hidden'
   latitude.value = position.coords.latitude;
   
   var longitude = document.createElement('input');
-  longitude.id = 'mapcontainer';
+  longitude.id = 'longitude';
   longitude.type = 'hidden'
   longitude.value = position.coords.longitude;
 
