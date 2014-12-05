@@ -29,12 +29,19 @@ function error(error) {
 function onLoad() {
 	document.addEventListener('deviceready', onDeviceReady, false);
 }
+
 function onDeviceReady() {
 	alert('Ready');
-
+	
+	var options = {
+		enableHighAccuracy: true,
+		timeout: 10000,
+		maximumAge: 0
+	};
+	
 	if (navigator.geolocation) {
 	  alert('test');
-	  navigator.geolocation.getCurrentPosition(success, error);
+	  navigator.geolocation.getCurrentPosition(success, error, options);
 	} 
 	else {
 	  alert('Vous ne pouvez pas être géolocalisé');
