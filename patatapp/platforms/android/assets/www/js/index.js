@@ -16,15 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
 */
-alert('Ok');
 
 function success(position) {
   var mapcanvas = document.createElement('div');
   mapcanvas.id = 'mapcontainer';
   mapcanvas.style.height = '400px';
   mapcanvas.style.width = '600px';
+  
+  var latitude = document.createElement('input');
+  latitude.id = 'mapcontainer';
+  latitude.type = 'hidden'
+  latitude.value = position.coords.latitude;
+  
+  var longitude = document.createElement('input');
+  longitude.id = 'mapcontainer';
+  longitude.type = 'hidden'
+  longitude.value = position.coords.longitude;
 
   document.querySelector('article').appendChild(mapcanvas);
+  document.querySelector('form').appendChild(latitude);
+  document.querySelector('form').appendChild(longitude);
 
   var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
   
@@ -55,20 +66,10 @@ function onLoad() {
 }
 
 function onDeviceReady() {
-	alert('Ready');
-	
 	var options = {
 		enableHighAccuracy: true,
 		timeout: 10000,
 		maximumAge: 0
 	};
-	
-	if (navigator.geolocation) {
-	  alert('test');
-	  navigator.geolocation.getCurrentPosition(success, error, options);
-	} 
-	else {
-	  alert('Vous ne pouvez pas être géolocalisé');
-	}
 }
  
