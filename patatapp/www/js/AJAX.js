@@ -14,25 +14,29 @@ var xhr = getXHR();
 
 // Mise à jour de la liste dès que les données sont disponibles
 function retourRequete() {
-	alert("State: "+xhr.readyState);
    if (xhr.readyState == xhr.DONE) { // Données disponibles
       var a = document.getElementById("success");
-		alert("Reponse: "+xhr.responseText);
+	  if(xhr.responseText == 'ok') {
+		alert('ok!');
+	  }
+	  else {
+	    alert(xhr.responseText);
+	  }
       a.innerHTML = xhr.responseText;
    }
 }
 
-// Chargement de la liste des plats d'un type
-function envoyerFormulaire() {
-   // On vérifie qu'un type est sélectionné
-   var champ = document.getElementById("test");
+function envoyerFormulaire(param) {
+   var longitude = document.getElementById("longitude");
+   var latitude = document.getElementById("latitude");
 
     // Ouverture d'une connexion en mode asynchrone
     xhr.onreadystatechange = retourRequete;
     // Avec POST
-    xhr.open("POST", "http://85.14.137.6/projets/NI2014-AppAndroid/serveur.php", true);
-    var param = 'test=' + champ.value;
-	alert("Param: "+param);
+    xhr.open("POST", "http://85.14.137.6/projets/test1/Tests/patatApp.php", true);
+	
+    var param = 'addLocation=1&longitude='+longitude.value+'&latitude='+latitude.value+'&id_state=FR';
+	
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send(param);
 }
